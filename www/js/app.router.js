@@ -1,23 +1,7 @@
-import tabView      from './views/tabs.html';
-import firstTabView from './views/first.html';
+function AppRouter($urlRouterProvider) {
+  'use strict';
 
-function AppRouter($stateProvider, $urlRouterProvider) {
-  $stateProvider
-    .state('app', {
-        url: "/app",
-        abstract: true,
-        template: tabView
-    })
-    .state('app.home', {
-        url: "/home",
-        views: {
-            'home-tab': {
-                template: firstTabView
-            }
-        }
-    });
-    
-    $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/welcome');
 }
 
 export default AppRouter;

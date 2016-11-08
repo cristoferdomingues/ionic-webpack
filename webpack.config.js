@@ -3,7 +3,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   // Our entry file for the app,
   // You can specify multiple entry files using array.
-  entry: "./www/js/app.js",
+  entry: './www/js/app.js',
 
   // will output to our source files after budnled, very useful during development
   // Suggested to turn it of for production bundling
@@ -12,7 +12,7 @@ module.exports = {
   // here we will output the bundled files
   output: {
     path: __dirname + '/www',
-    filename: "bundle.js"
+    filename: 'bundle.js'
   },
   module: {
     // loaders allow you to preproccess file when your require them
@@ -61,7 +61,7 @@ module.exports = {
       // inside your components, directives
       {
         test: /\.html$/,
-        loader: "raw-loader"
+        loader: 'raw-loader'
       },
       {
         test: /\.(png|jpg)$/,
@@ -78,8 +78,8 @@ module.exports = {
   // When requiring modules in your code, require and import will first look in this directories
   // so you won't need to wrie relative paths to them
   resolve: {
-    root: __dirname + "/www/",
-    modulesDirectories: ["node_modules", "lib", "scss"],
+    root: __dirname + '/www/',
+    modulesDirectories: ['node_modules', 'lib', 'scss'],
     // you can add here scss extension if you want.
     // this will allow you to require('somejsfile') with out the .js extension
     extensions: ['', '.js']

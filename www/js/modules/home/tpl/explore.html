@@ -1,12 +1,12 @@
 <ion-view title="Guavo">
   <ion-nav-buttons side="left">
-    <button class="button button-clear" nav-direction="back" ui-sref="home.settings">
+    <button class="button button-clear button-stable" nav-direction="back" ui-sref="home.settings">
       <i class="icon ion-person"></i>
     </button>
   </ion-nav-buttons>
 
   <ion-nav-buttons side="right">
-    <button class="button button-clear" nav-direction="forward" ui-sref="home.matches">
+    <button class="button button-clear button-stable" nav-direction="forward" ui-sref="home.matches">
       <span class="dot-notification"></span>
       <i class="icon ion-chatbubbles"></i>
     </button>
@@ -31,7 +31,7 @@
       </div>
 
       <td-cards fit>
-        <td-card ng-repeat="card in $ctrl.cards" on-destroy="$ctrl.cardDestroyed($index)" on-swipe-left="$ctrl.cardSwipedLeft($event, $index)" on-swipe-right="cardSwipedRight($event, $index)" on-partial-swipe="cardPartialSwipe(amt)" on-transition-left="transitionLeft(card)"
+        <td-card ng-repeat="card in $ctrl.cards" on-destroy="$ctrl.cardDestroyed($index)" on-swipe-left="$ctrl.cardSwipedLeft($event, $index)" on-swipe-right="$ctrl.cardSwipedRight($event, $index)" on-partial-swipe="$ctrl.cardPartialSwipe(amt)" on-transition-left="$ctrl.transitionLeft(card)"
             on-transition-right="$ctrl.transitionRight(card)" on-transition-out="$ctrl.transitionOut(card)" class="card-{{$index}}" ng-style="{'z-index': $ctrl.cards.length - $index + 1}">
           <!-- Work around for The z-index missing issue-->
           <div class="card-tinder bg-white" vertical layout ng-click="$ctrl.openProfileModal(true)">
@@ -58,7 +58,7 @@
 
     <div class="card-actions padder-v" horizontal layout around-justified center>
       <div class="card-action">
-        <button class="button button-light rounded" ng-click="openNewChallengeModal()">
+        <button class="button button-light rounded" ng-click="$ctrl.openNewChallengeModal()">
           <i class="icon ion-videocamera calm text-2x rounded"></i>
         </button>
       </div>

@@ -4,6 +4,7 @@ import routing from './router';
 import ExploreCtrl from './controller/ExploreCtrl';
 import SettingsCtrl from './controller/SettingsCtrl';
 import MatchesCtrl from './controller/MatchesCtrl';
+import MessagingCtrl from './controller/MessagingCtrl';
 
 
 export default angular.module('home', [])
@@ -11,4 +12,5 @@ export default angular.module('home', [])
   .controller('ExploreCtrl', ExploreCtrl)
   .controller('SettingsCtrl', SettingsCtrl)
   .controller('MatchesCtrl', MatchesCtrl)
+  .controller('MessagingCtrl', MessagingCtrl)
   .name;

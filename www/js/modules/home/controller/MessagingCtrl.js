@@ -1,5 +1,38 @@
+let self;
+
+let messages = [{
+    isMe: true,
+    type: 'image', // text || image
+    body: 'img/hello.gif',
+    timestamp: 'Feb 26, 2016, 9:47PM'
+  },
+  {
+    isMe: false,
+    avatar: 'img/adam.jpg',
+    type: 'image', // text || image
+    body: 'img/hello.gif',
+    timestamp: 'Feb 26, 2016, 9:47PM'
+  },
+  {
+    isMe: true,
+    type: 'text', // text || image
+    body: 'Where are you, buddy?',
+    timestamp: 'Feb 26, 2016, 9:47PM'
+  },
+  {
+    isMe: false,
+    avatar: 'img/adam.jpg',
+    type: 'text', // text || image
+    body: 'I\'m almost there',
+    timestamp: 'Feb 26, 2016, 9:47PM'
+  }
+];
+
+
 export default class MessagingCtrl {
   constructor($stateParams, Giphy, $ionicScrollDelegate, $timeout, $ionicActionSheet) {
+    self = this;
+    this.messages = messages;
     this.$stateParams = $stateParams;
     this.Giphy = Giphy;
     this.$timeout = $timeout;
@@ -27,7 +60,6 @@ export default class MessagingCtrl {
   }
 
   sendText() {
-    let self = this;
     this.messages.push({
       isMe: true,
       type: 'text',
@@ -53,15 +85,15 @@ export default class MessagingCtrl {
 
   fakeReply() {
     this.$timeout(function() {
-      this.messages.push({
+      self.messages.push({
         isMe: false,
         avatar: 'img/adam.jpg',
         type: 'text',
         body: 'Keep typing dude',
         timestamp: 'Feb 26, 2016, 9:47PM'
       });
-      this.message = '';
-      this._scrollBottom();
+      self.message = '';
+      self._scrollBottom();
     }, 500);
   }
 
@@ -89,14 +121,19 @@ export default class MessagingCtrl {
   }
 
   _initGiphy() {
-    let self = this;
     this.Giphy.trending()
       .then(function(gifs) {
+        console.log('gifs', gifs);
         self.gifs = gifs;
       });
   }
 
   $onInit() {
     this._initGiphy();
+    this.isNew = this.$stateParams.id < 2;
+    this.gifs = [];
+    this.gifQuery = '';
+    this.isGifShown = false;
+    this.isGifLoading = false;
   }
 }

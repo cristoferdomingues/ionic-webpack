@@ -38,6 +38,7 @@ export default class MessagingCtrl {
     this.$timeout = $timeout;
     this.$ionicActionSheet = $ionicActionSheet;
     this.viewScroll = $ionicScrollDelegate.$getByHandle('userMessageScroll');
+    this.onInit();
   }
 
   _scrollBottom(target) {
@@ -128,7 +129,8 @@ export default class MessagingCtrl {
       });
   }
 
-  $onInit() {
+  onInit() {
+    console.log('OnInit');
     this._initGiphy();
     this.isNew = this.$stateParams.id < 2;
     this.gifs = [];

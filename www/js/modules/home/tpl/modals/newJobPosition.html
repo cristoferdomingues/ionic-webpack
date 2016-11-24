@@ -1,0 +1,58 @@
+<ion-modal-view>
+	<ion-header-bar class="bar bar-header bar-calm">
+		<button class="button button-clear" ng-click="$ctrl.closeNewJobPositionModal()">
+			Cancel
+		</button>
+		<h1 class="title">New Job Position</h1>
+		<button class="button button-clear" ng-click="$ctrl.closeNewJobPositionModal()">
+			Done
+		</button>
+	</ion-header-bar>
+	<ion-content vertical layout justified>
+		<div class="wrapper">
+			<div class="photos">
+				<a href="">
+					<div photo-pickable number="Thumbnail" img-src="photo1" style="padding: 10px 50px 10px 50px;"></div>
+				</a>
+			</div>
+		</div>
+		<div class="list card">
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Job Title</span>
+				<input type="text" placeholder="Give your challenge a title">
+			</label>
+			<a class="item item-icon-left" ng-click="$ctrl.openSearchRequirementsModal()">
+				<i class="icon ion-university"></i> Requirements
+				<span class="badge badge-assertive">0</span>
+			</a>
+			<a class="item item-icon-left" ng-click="$ctrl.openSalaryRangeModal()">
+				<i class="icon ion-social-usd"></i> Salary Range
+				<span class="badge">$10-30k</span>
+			</a>
+			<a class="item item-icon-left" ng-click="$ctrl.openChooseLocationModal()">
+				<i class="icon ion-navigate"></i> Location
+				<span class="badge">Portland, OR</span>
+			</a>
+			<a class="item item-icon-left" ng-click="$ctrl.openChallengesListModal()">
+				<i class="icon ion-pinpoint"></i> Challenges
+				<span class="badge badge-assertive">2</span>
+			</a>
+
+			<!-- <div class="item item-image" ng-click="redeemCoupon()">
+				<a ><img src="img/challenge.png"></a>
+			</div> -->
+		</div>
+		<div class="wrapper">
+			<button class="button button-block button-outline" ng-click="openChooseSchoolsModal()">
+				<i class="icon ion-share"></i>
+				Invite Colleges to Participate
+			</button>
+
+			<button class="button button-block button-outline" ng-click="">
+				<i class="icon ion-pricetags"></i>
+				Add Search Tags
+			</button>
+		</div>
+	</ion-content>
+
+</ion-modal-view>

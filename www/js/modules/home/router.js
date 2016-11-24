@@ -35,6 +35,36 @@ export default function routing($stateProvider) {
     template: require('./tpl/messaging.html'),
     controller: 'MessagingCtrl',
     controllerAs: '$ctrl'
-  });
+  })
+
+  .state('home.challenges', {
+    url: '/challenges',
+    template: require('./tpl/challenges.html'),
+    controller: 'ChallengesCtrl',
+    controllerAs: '$ctrl'
+  })
+
+  .state('home.studentSettings', {
+    url: '/settings',
+    template: require('./tpl/studentSettings.html'),
+    controller: 'SettingsCtrl',
+    controllerAs: '$ctrl'
+  })
+
+  .state('home.studentMessages', {
+    url: '/studentMessages',
+    template: require('./tpl/studentMessages.html'),
+    controller: 'MatchesCtrl',
+    controllerAs: '$ctrl'
+  })
+
+  .state('home.redeemCoupon', {
+    url: '/redeemCoupon',
+    template: require('./tpl/redeemCoupon.html'),
+    controller: 'RedeemCouponCtrl',
+    controllerAs: '$ctrl'
+  })
+
+  ;
 }
 routing.$inject = ['$stateProvider'];

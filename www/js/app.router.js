@@ -1,7 +1,7 @@
 function AppRouter($urlRouterProvider) {
   'use strict';
 
-  $urlRouterProvider.otherwise('/welcome');
+  $urlRouterProvider.otherwise('/account-create');
 }
 
 export default AppRouter;

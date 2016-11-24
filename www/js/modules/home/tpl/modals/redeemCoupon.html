@@ -1,0 +1,36 @@
+<ion-modal-view>
+	<ion-header-bar class="bar bar-header bar-balanced">
+		<h1 class="title">Redeem Coupon</h1>
+		<button class="button button-clear" ng-click="$ctrl.closeNewChallengeModal()">
+			Cancel
+		</button>
+	</ion-header-bar>
+	<ion-content vertical layout justified>
+		Congratulation
+		<div class="list card">
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Title</span>
+				<input type="text" placeholder="Give your challenge a title">
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Description</span>
+				<input type="text" placeholder="Describe in a few words what is your challenge about.">
+			</label>
+			<div class="item item-image">
+				<img src="img/challenge.png">
+			</div>
+		</div>
+		<div class="wrapper">
+			<button class="button button-block button-outline" ng-click="">
+				<i class="icon ion-share"></i>
+				Invite Colleges to Participate
+			</button>
+
+			<button class="button button-block button-outline" ng-click="">
+				<i class="icon ion-pricetags"></i>
+				Add Search Tags
+			</button>
+		</div>
+	</ion-content>
+
+</ion-modal-view>

@@ -1,15 +1,15 @@
 <ion-view title="Guavo">
   <ion-nav-buttons side="left">
-    <button class="button button-clear button-stable" nav-direction="back" ui-sref="home.settings">
-      <i class="icon ion-person"></i>
-    </button>
+    <button class="button button-clear button-stable" nav-direction="back" ui-sref="home.studentSettings">
+			<i class="icon ion-person"></i>
+		</button>
   </ion-nav-buttons>
 
   <ion-nav-buttons side="right">
-    <button class="button button-clear button-stable" nav-direction="forward" ui-sref="home.matches">
-      <span class="dot-notification"></span>
-      <i class="icon ion-chatbubbles"></i>
-    </button>
+    <button class="button button-clear button-stable" nav-direction="forward" ui-sref="home.studentMessages">
+			<span class="dot-notification"></span>
+			<i class="icon ion-chatbubbles"></i>
+		</button>
   </ion-nav-buttons>
 
   <ion-nav-title>
@@ -25,21 +25,21 @@
           </div>
         </div>
         <div class="text-muted text-center l-h">
-          There's no one new around you.
+          There's no one new challenge around you.
           <br> Use Passport to choose a new location.
         </div>
       </div>
 
       <td-cards fit>
         <td-card ng-repeat="card in $ctrl.cards" on-destroy="$ctrl.cardDestroyed($index)" on-swipe-left="$ctrl.cardSwipedLeft($event, $index)" on-swipe-right="$ctrl.cardSwipedRight($event, $index)" on-partial-swipe="$ctrl.cardPartialSwipe(amt)" on-transition-left="$ctrl.transitionLeft(card)"
-            on-transition-right="$ctrl.transitionRight(card)" on-transition-out="$ctrl.transitionOut(card)" class="card-{{$index}}" ng-style="{'z-index': $ctrl.cards.length - $index + 1}">
+            on-transition-right="$ctrl.transitionRight(card)" on-transition-out="$ctrl.transitionOut(card)" class="card-{{$index}}" ng-style="{'z-index': cards.length - $index + 1}">
           <!-- Work around for The z-index missing issue-->
           <div class="card-tinder bg-white" vertical layout ng-click="$ctrl.openProfileModal(true)">
             <div flex class="div-img" ng-style="{'background-image': 'url(\'' + card.image + '\')'}"></div>
             <div class="row caption text-lg l-h">
               <div class="col-80 text-left">
-                <div class="text-xl">Hieu Pham, 28</div>
-                <div class="text-muted">The Cafe Lounge</div>
+                <div class="text-xl">This is the Challenge Title</div>
+                <div class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, repellat.</div>
               </div>
               <div class="col-20 text-muted text-xl text-right">
                 <i class="icon ion-android-bookmark"></i> 3
@@ -49,7 +49,7 @@
               <span class="wrapper-xs b b-danger b-5x r-3x assertive font-bold text-3x">PASS</span>
             </div>
             <div class="yes-text">
-              <span class="wrapper-xs b b-success b-5x r-3x balanced font-bold text-3x">INTERVIEW</span>
+              <span class="wrapper-xs b b-success b-5x r-3x balanced font-bold text-3x">ACCEPT</span>
             </div>
           </div>
         </td-card>
@@ -58,24 +58,24 @@
 
     <div class="card-actions padder-v" horizontal layout around-justified center>
       <div class="card-action">
-        <button class="button button-light rounded" ng-click="$ctrl.openNewJobPositionModal()">
-          <i class="icon ion-briefcase calm text-2x rounded"></i>
-        </button>
+        <button class="button button-light rounded">
+					<i class="icon ion-heart assertive text-2x rounded"></i>
+				</button>
       </div>
       <div class="card-action bigger-button">
-        <button class="button button-large button-light rounded" ng-class="{zoom: isMoveLeft}" ng-click="cardDestroyed(0)">
-          <i class="icon ion-close-round text-2x rounded" ng-class="cards.length == 0 ? 'stable' : 'assertive'"></i>
-        </button>
+        <button class="button button-large button-light rounded" ng-class="{zoom: $ctrl.isMoveLeft}" ng-click="$ctrl.cardDestroyed(0)">
+					<i class="icon ion-close-round text-2x rounded" ng-class="cards.length == 0 ? 'stable' : 'assertive'"></i>
+				</button>
       </div>
       <div class="card-action bigger-button">
-        <button class="button button-large button-light rounded" ng-class="{zoom: isMoveRight}" ng-click="cardDestroyed(0)">
-          <i class="icon ion-checkmark text-2x rounded" ng-class="cards.length == 0 ? 'stable' : 'balanced'"></i>
-        </button>
+        <button class="button button-large button-light rounded" ng-class="{zoom: $ctrl.isMoveRight}" ng-click="$ctrl.cardDestroyed(0)">
+					<i class="icon ion-checkmark text-2x rounded" ng-class="cards.length == 0 ? 'stable' : 'balanced'"></i>
+				</button>
       </div>
       <div class="card-action">
         <button class="button button-light rounded">
-          <i class="icon ion-android-star text-2x rounded" ng-class="cards.length == 0 ? 'stable' : 'calm'"></i>
-        </button>
+					<i class="icon ion-android-star text-2x rounded" ng-class="cards.length == 0 ? 'stable' : 'calm'"></i>
+				</button>
       </div>
     </div>
   </ion-content>

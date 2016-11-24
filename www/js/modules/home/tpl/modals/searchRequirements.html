@@ -1,0 +1,46 @@
+<ion-modal-view>
+	<ion-header-bar class="bar bar-header bar-calm">
+		<button class="button button-clear" ng-click="$ctrl.closeSearchRequirementsModal()">
+			Cancel
+		</button>
+		<h1 class="title">Choose Requirements</h1>
+		<button class="button button-clear" ng-click="$ctrl.closeSearchRequirementsModal()">
+			Done
+		</button>
+	</ion-header-bar>
+	<ion-content vertical layout justified>
+
+		<ion-list>
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input type="text" placeholder="Search">
+				</label>
+			</div>
+
+			<div class="item item-divider">
+				Personal
+			</div>
+
+			<ion-checkbox checked>Personal</ion-checkbox>
+			<ion-checkbox checked>Professionalism</ion-checkbox>
+			<ion-checkbox checked>Honesty</ion-checkbox>
+			<ion-checkbox checked>Adaptability</ion-checkbox>
+			<ion-checkbox checked>Problem-solving</ion-checkbox>
+			<ion-checkbox checked>Energy</ion-checkbox>
+			<ion-checkbox checked>Self-Confidence</ion-checkbox>
+
+			<div class="item item-divider">
+				Technical Skills
+			</div>
+			<ion-checkbox checked>Javascript</ion-checkbox>
+			<ion-checkbox checked>CSS</ion-checkbox>
+			<ion-checkbox checked>Java</ion-checkbox>
+			<ion-checkbox checked>HTML</ion-checkbox>
+
+		</ion-list>
+
+
+
+	</ion-content>
+
+</ion-modal-view>

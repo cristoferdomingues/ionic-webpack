@@ -45,6 +45,35 @@ function bindModalEvts($scope) {
   $scope.closeNewChallengeModal = function() {
     $scope.modalNewChallenge.hide();
   };
+
+  $scope.closeProfileModal = function() {
+    $scope.profileModal.hide();
+  };
+
+  $scope.closeEditProfileModal = function() {
+    $scope.editProfileModal.hide();
+  };
+
+  $scope.openEditProfileModal = function() {
+    $scope.editProfileModal.show();
+  };
+
+  $scope.closeNewJobPositionModal = function() {
+    $scope.modalNewJobPosition.hide();
+  };
+
+  $scope.closeSearchRequirementsModal = function() {
+    $scope.modalSearchRequirements.hide();
+  };
+
+  $scope.closeSalaryRangeModal = function() {
+    $scope.modalSalaryRange.hide();
+  };
+
+  $scope.closeChooseSchoolsModal = function() {
+    $scope.modalChooseSchools.hide();
+  };
+
 }
 
 export default class ExploreCtrl {
@@ -59,12 +88,42 @@ export default class ExploreCtrl {
       animation: 'slide-in-up'
     });
 
-    bindModalEvts(_self.$scope);
-
     _self.$scope.matchModal = $ionicModal.fromTemplate(require('../tpl/modals/match.html'), {
       scope: _self.$scope,
       animation: 'slide-in-up'
     });
+
+    _self.$scope.profileModal = $ionicModal.fromTemplate(require('../tpl/modals/profile.html'), {
+      scope: _self.$scope,
+      animation: 'slide-in-up'
+    });
+
+    _self.$scope.editProfileModal = $ionicModal.fromTemplate(require('../tpl/modals/profile_edit.html'), {
+      scope: _self.$scope,
+      animation: 'slide-in-up'
+    });
+
+    _self.$scope.modalNewJobPosition = $ionicModal.fromTemplate(require('../tpl/modals/newJobPosition.html'), {
+      scope: _self.$scope,
+      animation: 'slide-in-up'
+    });
+
+    _self.$scope.modalSearchRequirements = $ionicModal.fromTemplate(require('../tpl/modals/searchRequirements.html'), {
+      scope: _self.$scope,
+      animation: 'slide-in-up'
+    });
+
+    _self.$scope.modalSalaryRange = $ionicModal.fromTemplate(require('../tpl/modals/salaryRange.html'), {
+      scope: _self.$scope,
+      animation: 'slide-in-up'
+    });
+
+    _self.$scope.modalChooseSchools = $ionicModal.fromTemplate(require('../tpl/modals/chooseSchools.html'), {
+      scope: _self.$scope,
+      animation: 'slide-in-up'
+    });
+
+    bindModalEvts(_self.$scope);
 
   }
 
@@ -114,6 +173,28 @@ export default class ExploreCtrl {
 
   openMatchModal() {
     this.$scope.matchModal.show();
+  }
+
+  openProfileModal(isFromCard) {
+    this.isFromCard = isFromCard;
+    this.$scope.profileModal.show();
+  }
+
+
+  openNewJobPositionModal() {
+    this.$scope.modalNewJobPosition.show();
+  }
+
+  openSearchRequirementsModal() {
+    this.$scope.modalSearchRequirements.show();
+  }
+
+  openSalaryRangeModal() {
+    this.$scope.modalSalaryRange.show();
+  }
+
+  openChooseSchoolsModal() {
+    this.$scope.modalChooseSchools.show();
   }
 
   $onDestroy() {
